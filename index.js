@@ -1,6 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils');
+const path = require('path');
+// const generateMarkdown = require('generateMarkdown')
 
 //create my array of questions for the user input, will be more questions
 const questions = [
@@ -58,13 +59,33 @@ function writeToFile(fileName, data) {
     return fs.writeFileSync(path.join(process.cwd(), fileName), data)
 }
 
+const generateMarkdown = (data) =>
+     `
+    ##Description
+    ${data.description}
+
+    ##GitHub User
+    ${data.github}
+
+    ##GitHub Email 
+    ${data.email}
+    `;
+
+
+
+
+module.exports = generateMarkdown;
+
 //write the function to initialize the application
+
 
 function init() {
     inquirer.prompt(questions).then((inquirerResponses) => {
         console.log("generating your readme");
         writeToFile('readMe.md', generateMarkdown({...inquirerResponses}))
     })
+    .catch((err) => console.error(err));
 }
+
 init();
 
