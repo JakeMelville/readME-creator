@@ -39,7 +39,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'What kind of license is your application using?',
-        choices: ['MIT', 'APACHE', 'NONE']
+        choices: ['MIT', 'Apache 2.0', 'GPLv3', 'BSD 3', 'None']
     },
     {
         type: 'input',
@@ -60,13 +60,14 @@ function writeToFile(fileName, data) {
 }
 
 const generateMarkdown = (data) =>
-`# ${data.title} 
+`[![License](https://img.shields.io/badge/License-${data.license}-blue.svg)](${data.licenseLink})
+# ${data.title} 
 
 ### Description:
         ${data.description}
      
 ## Table of Contents:
-     * Installation
+     * [Installation](#installation)
      * Usage
      * License
      * Contrubting
@@ -104,8 +105,23 @@ module.exports = generateMarkdown;
 
 function init() {
     inquirer.prompt(questions).then((inquirerResponses) => {
+        switch(inquirerResponses.license) {
+            case 'MIT':
+                inquirerResponses.licenseLink = 'https://opensource.org/licenses/MIT';
+                break;
+            case 'Apache 2.0':
+                inquirerResponses.licenseLink = 'https://opensource.org/licenses/Apache-2.0';
+                break;
+            case 'GPLv3':
+                inquirerResponses.licenseLink = 'https://opensource.org/licenses/gpl-3.0';
+                break;
+            case 'BSD 3':
+                inquirerResponses.licenseLink = 'https://opensource.org/licenses/bsd-3'; 
+                break;
+            default: inquirerResponses.licenseLink = '#';
+        }
         console.log("generating your readme");
-        writeToFile('readMe.md', generateMarkdown({...inquirerResponses}))
+        writeToFile('readMe.md', generateMarkdown(inquirerResponses))
     })
     .catch((err) => console.error(err));
 }
@@ -122,3 +138,4 @@ init();
 //creat a function that returns the licesnse link based on user pick of none return SOMETHING
 
 //creat a function that returns the license section of the readME if there is none return SOMETHING. 
+
