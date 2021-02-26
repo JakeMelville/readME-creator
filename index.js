@@ -27,7 +27,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'contributions',
+        name: 'contribution',
         message: 'Please provide contribution guidlines:'
     },
     {
@@ -60,15 +60,38 @@ function writeToFile(fileName, data) {
 }
 
 const generateMarkdown = (data) =>
-     `
-    ##Description
-    ${data.description}
+`# ${data.title} 
 
-    ##GitHub User
-    ${data.github}
+### Description:
+        ${data.description}
+     
+## Table of Contents:
+     * Installation
+     * Usage
+     * License
+     * Contrubting
+     * Tests
+     * Questions
 
-    ##GitHub Email 
-    ${data.email}
+### Insallation:
+        ${data.installation}
+     
+### Usage:
+        ${data.usage}
+     
+### License:
+        ${data.license}
+     
+### Contributing:
+        ${data.contribution}
+     
+### Tests:
+        ${data.instructions}
+     
+### Questions:
+        ${data.github}
+        ${data.email}
+        Please feel free to reach me by email!
     `;
 
 
@@ -89,3 +112,13 @@ function init() {
 
 init();
 
+//still need to link table of contents to specific sections
+
+// line breaks in node?
+
+//using if statement three functions below
+//create a function that returns a license badge based on user pick of license, if not, return 'user did not select'.
+
+//creat a function that returns the licesnse link based on user pick of none return SOMETHING
+
+//creat a function that returns the license section of the readME if there is none return SOMETHING. 
