@@ -39,7 +39,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'What kind of license is your application using?',
-        choices: ['MIT', 'Apache2.0', 'GPLv3', 'BSD3', 'None']
+        choices: ['MIT', 'Apache2.0', 'GPLv3', 'BSD3', 'MPL2.0']
     },
     {
         type: 'input',
@@ -82,6 +82,7 @@ const generateMarkdown = (data) =>
      
 ### License:
         Click the ${data.license} badge at the top of the page to learn more about the license coverage of this application.
+
      
 ### Contributing:
         ${data.contribution}
@@ -93,7 +94,10 @@ const generateMarkdown = (data) =>
 
 GitHib Profile Link: github.com/${data.github}
         
-Please feel free to reach me at ${data.email}   
+Please feel free to reach me at ${data.email} 
+
+** Link to Video Walkthrough ** https://drive.google.com/file/d/1QHfb5mYF4jpyGi2OcqRTfEneKx9D2lUE/view
+
     `;
 
 module.exports = generateMarkdown;
@@ -116,7 +120,10 @@ function init() {
             case 'BSD3':
                 inquirerResponses.licenseLink = 'https://opensource.org/licenses/bsd-3'; 
                 break;
-            default: inquirerResponses.licenseLink = '#';
+            case 'MPL2.0':
+                inquirerResponses.licenseLink = 'https://opensource.org/licenses/MPL-2.0';
+                break;
+            default: ;
         }
         console.log("generating your readme");
         writeToFile('readMe.md', generateMarkdown(inquirerResponses))
@@ -125,15 +132,3 @@ function init() {
 }
 
 init();
-
-//still need to link table of contents to specific sections
-
-// line breaks in node?
-
-//using if statement three functions below
-//create a function that returns a license badge based on user pick of license, if not, return 'user did not select'.
-
-//creat a function that returns the licesnse link based on user pick of none return SOMETHING
-
-//creat a function that returns the license section of the readME if there is none return SOMETHING. 
-
