@@ -81,7 +81,7 @@ const generateMarkdown = (data) =>
         ${data.usage}
      
 ### License:
-        ${data.license}
+        Click the ${data.license.trim()} badge up top to learn more!
      
 ### Contributing:
         ${data.contribution}
@@ -109,13 +109,13 @@ function init() {
             case 'MIT':
                 inquirerResponses.licenseLink = 'https://opensource.org/licenses/MIT';
                 break;
-            case 'Apache 2.0':
+            case 'Apache2.0':
                 inquirerResponses.licenseLink = 'https://opensource.org/licenses/Apache-2.0';
                 break;
             case 'GPLv3':
                 inquirerResponses.licenseLink = 'https://opensource.org/licenses/gpl-3.0';
                 break;
-            case 'BSD 3':
+            case 'BSD3':
                 inquirerResponses.licenseLink = 'https://opensource.org/licenses/bsd-3'; 
                 break;
             default: inquirerResponses.licenseLink = '#';
