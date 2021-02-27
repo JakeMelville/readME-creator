@@ -81,7 +81,7 @@ const generateMarkdown = (data) =>
         ${data.usage}
      
 ### License:
-        Click the ${data.license.trim()} badge up top to learn more!
+        Click the ${data.license} badge at the top of the page to learn more about the license coverage of this application.
      
 ### Contributing:
         ${data.contribution}
@@ -89,14 +89,12 @@ const generateMarkdown = (data) =>
 ### Tests:
         ${data.instructions}
      
-### Questions:
-        ${data.github}
-        ${data.email}
-        Please feel free to reach me by email!
+### Questions?
+
+GitHib Profile Link: github.com/${data.github}
+        
+Please feel free to reach me at ${data.email}   
     `;
-
-
-
 
 module.exports = generateMarkdown;
 
