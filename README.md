@@ -1,34 +1,34 @@
-[![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://opensource.org/licenses/gpl-3.0)
-# a 
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+# l 
 
 ### Description:
-        a
+        l
      
 ## Table of Contents:
-     * [Installation](#installation)
-     * Usage
-     * License
-     * Contrubting
-     * Tests
-     * Questions
+* [Installation](#installation:)
+* [Usage](#usage:)
+* [License](#license:)
+* [Contrubting](#contributing:)
+* [Tests](#tests:)
+* [Questions](#questions:)
 
-### Insallation:
-        a
+### Installation:
+        l
      
 ### Usage:
-        a
+        l
      
 ### License:
-        GPLv3
+        MIT
      
 ### Contributing:
-        a
+        l
      
 ### Tests:
-        a
+        l
      
 ### Questions:
-        a
-        a
+        d
+        d
         Please feel free to reach me by email!
     

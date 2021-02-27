@@ -39,7 +39,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'What kind of license is your application using?',
-        choices: ['MIT', 'Apache 2.0', 'GPLv3', 'BSD 3', 'None']
+        choices: ['MIT', 'Apache2.0', 'GPLv3', 'BSD3', 'None']
     },
     {
         type: 'input',
@@ -67,14 +67,14 @@ const generateMarkdown = (data) =>
         ${data.description}
      
 ## Table of Contents:
-     * [Installation](#installation)
-     * Usage
-     * License
-     * Contrubting
-     * Tests
-     * Questions
+* [Installation](#installation:)
+* [Usage](#usage:)
+* [License](#license:)
+* [Contrubting](#contributing:)
+* [Tests](#tests:)
+* [Questions](#questions:)
 
-### Insallation:
+### Installation:
         ${data.installation}
      
 ### Usage:
